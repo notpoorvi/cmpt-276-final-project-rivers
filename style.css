@@ -1,0 +1,95 @@
+body{
+    height: 1500px;
+}
+
+.header{
+    border-bottom: 4px solid black;
+    height: 75px;
+}
+
+#name{
+    position: relative;
+    font-family: 'Italianno', cursive;
+    font-size: 48px;
+    left: 40px;
+    bottom: 5px;
+    text-decoration: none;
+    color: black;
+    font-weight: lighter;
+}
+
+#search, #submitsearch{
+    position: relative;
+    left: 730px;
+    bottom: 15px;
+    border-radius: 10px;
+}
+
+#contactUs, #aboutUs{
+    position: relative;
+    left: 380px;
+    bottom: 15px;
+    color: rgb(152, 151, 151);
+}
+
+#quote{
+    background-color: rgb(84, 64, 210);
+    height: 162px;
+    margin: 5px 0px 5px 0px;
+}
+
+#quote p{
+    color: white;
+    font-family: 'Italianno', cursive;
+    display: inline-block;
+    font-size: 128px;
+    position: relative;
+    bottom: 15px;
+    -webkit-text-stroke: 0.2px black;
+}
+
+#horizontal-line{
+    border-top: 4px solid black;
+}
+
+#tagline{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(217, 217, 217);
+    height: 34px;
+    width: 1160px;
+    margin: 10px auto;
+}
+
+#features{
+    position: relative;
+    top: 30px;
+    border-bottom: 4px solid black;
+    margin: 0px 70px;
+    padding: 0px 90px;
+}
+
+#features a{
+    color: black;
+    position: relative;
+}
+
+#feature-2-icon{
+    left: 30px;
+}
+
+.circle-background {
+    width: 200px; /* Adjust the size of the circle */
+    height: 200px; /* Adjust the size of the circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Creates a circle */
+    background-color: #FFF6E7;
+    border: 1px solid black;
+}
+
+#features p{
+    font-family: 'Italianno', cursive;
+    font-size: 48px;
+}
