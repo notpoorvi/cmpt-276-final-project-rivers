@@ -1,0 +1,248 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    height: 1685px;
+    margin: 0;
+    padding: 0;
+}
+
+.header{
+    border-bottom: 4px solid black;
+    height: 75px;
+}
+
+#name{
+    position: relative;
+    font-family: 'Italianno', cursive;
+    font-size: 48px;
+    left: 40px;
+    bottom: 5px;
+    text-decoration: none;
+    color: black;
+    font-weight: lighter;
+}
+
+#search, #submitsearch{
+    position: relative;
+    left: 730px;
+    bottom: 15px;
+    border-radius: 10px;
+}
+
+#contactUs, #aboutUs{
+    position: relative;
+    left: 380px;
+    bottom: 15px;
+    color: rgb(152, 151, 151);
+}
+
+#quote{
+    background-color: rgb(84, 64, 210);
+    height: 162px;
+    margin: 5px 0px 5px 0px;
+}
+
+#quote p{
+    color: white;
+    font-family: 'Italianno', cursive;
+    display: inline-block;
+    font-size: 128px;
+    position: relative;
+    bottom: 15px;
+    -webkit-text-stroke: 0.2px black;
+}
+
+#horizontal-line{
+    border-top: 4px solid black;
+}
+
+#tagline{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(217, 217, 217);
+    height: 34px;
+    width: 1300px;
+    margin: 10px 70px;
+    display: flex;
+    justify-content: center;
+}
+
+#features{
+    position: relative;
+    top: 30px;
+    border-bottom: 4px solid black;
+    margin: 0px 70px;
+    padding: 0px 90px;
+}
+
+#features a{
+    color: black;
+    position: relative;
+}
+
+#feature-2-icon{
+    left: 30px;
+}
+
+.circle-background {
+    width: 200px; /* Adjust the size of the circle */
+    height: 200px; /* Adjust the size of the circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Creates a circle */
+    background-color: #FFF6E7;
+    border: 1px solid black;
+}
+
+#features p{
+    font-family: 'Italianno', cursive;
+    font-size: 48px;
+}
+
+.image-user-testimonials{
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-testimonials {
+    width: 45%;
+    background-color: #9285E2;
+    margin: 5% 5% 5% 5%;
+    border-bottom: 10px solid white;
+    border-right: 10px solid white;
+    box-shadow: 10px 10px 0px black;
+    position: relative;
+    bottom: 10px;
+    overflow: hidden;
+}
+
+.arrow {
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+.testimonial-container h2{
+    text-align: center;
+    position: relative;
+    top: 15%;
+    left: 25%;
+    display: inline;
+    font-family: 'Italianno', cursive;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border-bottom: 1px solid;
+}
+
+.testimonial-container p{
+    text-align: center;
+    position: relative;
+    top: 20%;
+    width: 80%;
+    left: 10%;
+    font-family: Grape Nuts;
+    font-size: 42px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #FFF;
+}
+
+.testimonial-container{
+    display: flex;
+    justify-content: space-around;
+}
+
+.left-arrow{
+    position: absolute;
+    top: 50%;
+    right: 95%;
+}
+
+.right-arrow{
+    position: absolute;
+    top: 50%;
+    left: 95%;
+}
+
+.image-container{
+    height: 483px;
+    margin-top: 30px;
+}
+
+#food-image{
+    position: relative;
+    left: 80px;
+    top: 80px;
+    border: 10px solid white;
+    box-shadow: 0 0 0 10px black, 0 0 0 20px rgb(84, 64, 210);
+    margin: -30px 10px; 
+}
+
+#purpose-container{
+    margin: 10px 80px;
+    background-color: rgb(255, 234, 203);
+    border: 8px solid rgb(84, 64, 210);
+    margin: 0px 65px;
+    padding: 5px 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 20px;
+    font-size: 32px;
+    display: flexbox;
+    flex-wrap: wrap;
+}
+
+#purpose-container h3{
+    font-family: 'Grape Nuts', cursive;
+    font-size: 64px;
+    color: rgb(84, 64, 210);
+}
+
+.blank-space{
+    height: 30px;
+}
+
+#footer{
+    background-color: rgb(255, 234, 203);
+    color: black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    min-height: 0vh;
+    border: 5px solid rgb(84, 64, 210);
+}
+
+#about-us, #contact-us {
+    text-align: center;
+    width: 70%;
+}
+
+#about-us h5, #contact-us h5{
+    margin-bottom: 10px;
+}
+
+.separator {
+    border-left: 1px solid #000;
+    height: 60px;
+    margin: 0 20px;
+}
+
+@media (max-width: 768px) {
+    #footer {
+        flex-direction: column;
+        text-align: center;
+    }
+    .separator {
+        border-left: none;
+        border-top: 1px solid #000;
+        width: 100%;
+        height: 0;
+        margin: 10px 0;
+    }
+}
