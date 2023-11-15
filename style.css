@@ -4,6 +4,8 @@
 
 body{
     height: 1685px;
+    margin: 0;
+    padding: 0;
 }
 
 .header{
@@ -105,15 +107,67 @@ body{
     justify-content: space-between;
 }
 
-.user-testimonials{
+.user-testimonials {
     width: 45%;
     background-color: #9285E2;
-    margin: 90px 80px 55px 105px;
+    margin: 5% 5% 5% 5%;
     border-bottom: 10px solid white;
     border-right: 10px solid white;
     box-shadow: 10px 10px 0px black;
     position: relative;
     bottom: 10px;
+    overflow: hidden;
+}
+
+.arrow {
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+.testimonial-container h2{
+    text-align: center;
+    position: relative;
+    top: 15%;
+    left: 25%;
+    display: inline;
+    font-family: 'Italianno', cursive;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border-bottom: 1px solid;
+}
+
+.testimonial-container p{
+    text-align: center;
+    position: relative;
+    top: 20%;
+    width: 80%;
+    left: 10%;
+    font-family: Grape Nuts;
+    font-size: 42px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #FFF;
+}
+
+.testimonial-container{
+    display: flex;
+    justify-content: space-around;
+}
+
+.left-arrow{
+    position: absolute;
+    top: 50%;
+    right: 95%;
+}
+
+.right-arrow{
+    position: absolute;
+    top: 50%;
+    left: 95%;
 }
 
 .image-container{
@@ -127,10 +181,10 @@ body{
     top: 80px;
     border: 10px solid white;
     box-shadow: 0 0 0 10px black, 0 0 0 20px rgb(84, 64, 210);
-    margin: -30px 10px;
+    margin: -30px 10px; 
 }
 
-.purpose-container{
+#purpose-container{
     margin: 10px 80px;
     background-color: rgb(255, 234, 203);
     border: 8px solid rgb(84, 64, 210);
@@ -143,7 +197,7 @@ body{
     flex-wrap: wrap;
 }
 
-.purpose-container h3{
+#purpose-container h3{
     font-family: 'Grape Nuts', cursive;
     font-size: 64px;
     color: rgb(84, 64, 210);
@@ -153,13 +207,42 @@ body{
     height: 30px;
 }
 
-.footer{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+#footer{
     background-color: rgb(255, 234, 203);
+    color: black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    min-height: 0vh;
+    border: 5px solid rgb(84, 64, 210);
 }
 
-.about-us, .contact-us{
-    margin: 100px 30px 15px 30px;
+#about-us, #contact-us {
+    text-align: center;
+    width: 70%;
+}
+
+#about-us h5, #contact-us h5{
+    margin-bottom: 10px;
+}
+
+.separator {
+    border-left: 1px solid #000;
+    height: 60px;
+    margin: 0 20px;
+}
+
+@media (max-width: 768px) {
+    #footer {
+        flex-direction: column;
+        text-align: center;
+    }
+    .separator {
+        border-left: none;
+        border-top: 1px solid #000;
+        width: 100%;
+        height: 0;
+        margin: 10px 0;
+    }
 }

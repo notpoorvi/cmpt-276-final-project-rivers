@@ -13,9 +13,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Italianno&family=Ubuntu:wght@300&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
 </head>
 
 <body>
+    <script src="script.js"></script>
     <header class="header">
         <div class="container, d-flex p-2">
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -47,7 +49,7 @@
     </figure>
     <div id="horizontal-line"></div>
     <div class="text-center" id="tagline">We take complex recipes and make them simple</div>
-    <div class="d-flex justify-content-around" id="features">
+    <article class="d-flex justify-content-around" id="features">
         <div id="feature-1">
             <a href="#" class="circle-background mx-2" id="feature-1-icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" fill="currentColor" class="bi bi-play-btn"
@@ -82,25 +84,36 @@
         <p class="text-center">Easy Search</p>
         </div>
         
-    </div>
+    </article>
     <div class="image-user-testimonials">
         <div class="image-container">
             <img src="https://source.unsplash.com/random/500x350?cookies" alt="remote image" id="food-image">
         </div>
-        <div class="user-testimonials"></div>
+        <div class="user-testimonials">
+            <div class="testimonial-container">
+                <div class="arrow left-arrow" onclick="showPreviousTestimonial()">&#9665;</div>
+                <div><h2>User Testimonials</h2>
+                <p class="testimonial">“I never used to cook, but this website makes it so easy to find good recipes!”<br>-- Emily R.</p></div>
+                
+                <div class="arrow right-arrow" onclick="showNextTestimonial()">&#9655;</div>
+            </div>
+        </div>
     </div>
-    <div class="purpose-container">
+    <div id="purpose-container">
         <h3>Our Purpose</h3>
         <p>The purpose of EasyasPie.com is to compile easy to follow recipes that make it simple for users to find new recipes to bake or cook! The user-friendly platform incorporates video demonstrations for users to follow along with as they cook. With listed nutrition facts, health-conscious users can be mindful of their meal or dessert selections!</p>
     </div>
     <div class="blank-space"></div>
-    <footer class="footer">
-        <span class="about-us">
-            something about all the members. Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem corporis, maxime odio, minus hic vel provident eos atque, facere adipisci modi amet deserunt illum molestiae ad dolorem ea unde laborum perspiciatis quisquam? Voluptatibus, eum!
-        </span>
-        <span class="contact-us">
-            our contact information. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero dolorem expedita accusantium tenetur qui eveniet, excepturi ipsam modi suscipit nisi.
-        </span>
+    <footer id="footer">
+        <div id="about-us">
+            <h5>About Us</h5>
+            <div>something about all the members. Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem corporis, maxime odio, minus hic vel provident eos atque, facere adipisci modi amet deserunt illum molestiae ad dolorem ea unde laborum perspiciatis quisquam? Voluptatibus, eum!</div>
+        </div>
+        <div class="separator"></div>
+        <div id="contact-us">
+            <h5>Contact Us</h5>
+            <div>our contact information. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero dolorem expedita accusantium tenetur qui eveniet, excepturi ipsam modi suscipit nisi.</div>
+        </div>
     </footer>
     
 </body>
