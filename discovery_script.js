@@ -5,7 +5,8 @@ let searchQuery = '';
 
 //customize for spoonacular
 
-const APP_key = '34959198c63d4883b456da1d12c36061';
+// const APP_key = '34959198c63d4883b456da1d12c36061';
+const APP_key = '162949a76b0647f990d6e833b4703b95';
 
 // Function to get URL parameters
 function getQueryParam(param) {
@@ -45,11 +46,11 @@ function generateHTML(the_results){
     the_results.map(result => {
        generateditem +=
        `
-        <div class="item">
+        <div class="item" onclick="showRecipeDetails(${result.id})">
             <img src="${result.image}" alt="">
             <div class="flex_container">
                 <h1 class="title">${result.title}</h1>
-                <a class="view_button" href="#">View original Recipe</a>
+                <a class="view_button" href="#" onclick="showRecipeDetails(${result.id})">View original Recipe</a>
             </div>
             <p class="item_data">Ingredients or nutrition goes here</p>
         </div>
@@ -58,3 +59,9 @@ function generateHTML(the_results){
     searchResultDiv.innerHTML = generateditem;
 }
 
+function showRecipeDetails(recipeId) {
+    // Store the selected recipeId in localStorage
+    localStorage.setItem('selectedRecipeId', recipeId);
+    // Redirect to the recipe.html page
+    window.location.href = 'recipe.html';
+}
