@@ -15,6 +15,10 @@ section{
     grid-template: auto/repeat(auto-fit,minmax(300px,1fr));
 }
 
+.hidden {
+    display: none;
+}
+
 .item{
     width: 100%;
     padding: 15px;

@@ -25,11 +25,11 @@
             <a class="nav-link" id="contactUs" href="#">Contact Us</a>
         </div>
         <div id="submit-container">
-            <input class="form-control me-2" id="search" type="search" placeholder="Search an option"
-            aria-label="Search">
-            <button class="btn btn-outline-success" id="submitsearch" type="submit">Search</button>
+            <form class="searchform cf" onsubmit="searchRecipe(event)">
+                <input class="form-control me-2" id="search" type="text" placeholder="Search an option">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
         </div>
-        
     </header>
     <figure class="text-center" id="quote">
         <blockquote class="blockquote">

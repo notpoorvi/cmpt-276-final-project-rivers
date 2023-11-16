@@ -19,3 +19,9 @@ function updateTestimonial() {
     const testimonialElement = document.querySelector('.testimonial');
     testimonialElement.innerHTML = testimonials[currentTestimonial];
 }
+
+function searchRecipe(event) {
+    event.preventDefault();
+    var recipeName = document.getElementById("search").value;
+    window.location.href = "discovery_page.html?recipe=" + encodeURIComponent(recipeName);
+}
