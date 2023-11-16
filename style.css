@@ -40,6 +40,10 @@ body{
     right: 1%;
 }
 
+.searchform.cf{
+    display: contents;
+}
+
 #submitsearch{
     height: 60%;
 }
