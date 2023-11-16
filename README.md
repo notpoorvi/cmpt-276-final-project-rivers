@@ -14,4 +14,4 @@ The foundational languages—HTML, CSS, and JavaScript—forms the backbone of o
 
 ## Setup Intructions: 
 
-[Link to Prject Roadmap](https://github.com/users/ala284/projects/1/views/1)
+[Link to Project Roadmap](https://github.com/users/ala284/projects/1/views/1)
