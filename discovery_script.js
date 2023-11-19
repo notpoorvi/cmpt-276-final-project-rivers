@@ -40,6 +40,7 @@ async function fetchAPI() {
         part: 'snippet',
         q: `${searchQuery} recipe`,
         type: 'thumbnail',
+        maxResults: 10,
         key: youtubeApiKey,
     };
 
@@ -54,10 +55,14 @@ async function fetchAPI() {
 function generateHTML(youtubeResults) {
     let generateditem = '';
     youtubeResults.forEach(result => {
+        const thumbnailUrl = result.snippet.thumbnails.medium.url;
+
         generateditem +=
         `
         <div class="item">
-            <iframe width="100%" height="315" src="https://www.youtube.com/embed/${result.id.videoId}" frameborder="0" allowfullscreen></iframe>
+            <a href="https://www.youtube.com/watch?v=${result.id.videoId}" target="_blank">
+                <img src="${thumbnailUrl}" alt="Video Thumbnail">
+            </a>
             <div class="flex_container">
                 <h1 class="title">${result.snippet.title}</h1>
                 <a class="view_button" href="https://www.youtube.com/watch?v=${result.id.videoId}" target="_blank">Watch on YouTube</a>
