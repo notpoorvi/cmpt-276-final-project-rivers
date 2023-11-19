@@ -7,6 +7,7 @@ let searchQuery = '';
 
 // const APP_key = '34959198c63d4883b456da1d12c36061';
 const APP_key = '162949a76b0647f990d6e833b4703b95';
+const youtubeApiKey = 'AIzaSyDvtNzdBCepDaWXlERreRS1HRl1vU_Z4mA';
 
 // Function to get URL parameters
 function getQueryParam(param) {
@@ -30,7 +31,44 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchAPI();
 });
 
-async function fetchAPI(){
+async function fetchAPI() {
+    searchResultDiv.classList.add('hidden');
+    const baseURL = `https://www.googleapis.com/youtube/v3/search`;
+    const params = {
+        part: 'snippet',
+        q: `${searchQuery} recipe`,
+        type: 'video',
+        key: youtubeApiKey,
+    };
+
+    const url = `${baseURL}?${new URLSearchParams(params)}`;
+    const response = await fetch(url);
+    const data = await response.json();
+    generateHTML(data.items);
+    searchResultDiv.classList.remove('hidden');
+    console.log(data);
+}
+
+function generateHTML(youtubeResults) {
+    let generateditem = '';
+    youtubeResults.forEach(result => {
+        generateditem +=
+        `
+        <div class="item">
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/${result.id.videoId}" frameborder="0" allowfullscreen></iframe>
+            <div class="flex_container">
+                <h1 class="title">${result.snippet.title}</h1>
+                <a class="view_button" href="https://www.youtube.com/watch?v=${result.id.videoId}" target="_blank">Watch on YouTube</a>
+            </div>
+            <p class="item_data">${result.snippet.description}</p>
+        </div>
+       `;
+    });
+
+    searchResultDiv.innerHTML = generateditem;
+}
+
+/*async function fetchAPI(){
     searchResultDiv.classList.add('hidden');
     const baseURL = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${APP_key}&query=${searchQuery}`;
     const response = await fetch(baseURL);
@@ -54,10 +92,10 @@ function generateHTML(the_results){
             </div>
             <p class="item_data">Ingredients or nutrition goes here</p>
         </div>
-       ` 
+       `
     })
     searchResultDiv.innerHTML = generateditem;
-}
+}*/
 
 function showRecipeDetails(recipeId) {
     // Store the selected recipeId in localStorage
