@@ -81,6 +81,7 @@ function generateHTML(youtubeResults) {
 
 function generateHTML(the_results){
     let generateditem = '';
+
     the_results.map(result => {
        generateditem +=
        `
