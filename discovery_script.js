@@ -5,8 +5,8 @@ let searchQuery = '';
 
 //customize for spoonacular
 
-// const APP_key = '34959198c63d4883b456da1d12c36061';
-const APP_key = '162949a76b0647f990d6e833b4703b95';
+const APP_key = '34959198c63d4883b456da1d12c36061';
+// const APP_key = '162949a76b0647f990d6e833b4703b95';
 
 // Function to get URL parameters
 function getQueryParam(param) {
@@ -21,6 +21,10 @@ searchForm.addEventListener('submit', (e) => {
     fetchAPI();
 });
 
+function applyFilters() {
+    fetchAPI(); // Call the fetchAPI function with the selected filters
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     // Get the recipe name from the URL parameter
     searchQuery = getQueryParam('recipe');
@@ -32,7 +36,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function fetchAPI(){
     searchResultDiv.classList.add('hidden');
-    const baseURL = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${APP_key}&query=${searchQuery}`;
+
+    const cuisineFilter = document.getElementById('cuisine').value;
+    const vegetarianFilter = document.getElementById('vegetarian').checked;
+    const veganFilter = document.getElementById('vegan').checked;
+    const glutenFreeFilter = document.getElementById('glutenfree').checked;
+    const lowCarbFilter = document.getElementById('lowcarb').checked;
+
+    let baseURL = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${APP_key}&query=${searchQuery}&number=30`;
+    
+    // Add filters to the URL
+    if (cuisineFilter) {
+        baseURL += `&cuisine=${cuisineFilter}`;
+    }
+
+    if (vegetarianFilter) {
+        baseURL += '&diet=vegetarian';
+    }
+
+    if (veganFilter) {
+        baseURL += '&diet=vegan';
+    }
+
+    if (glutenFreeFilter) {
+        baseURL += '&diet=glutenFree';
+    }
+
+    if (lowCarbFilter) {
+        baseURL += '&diet=lowCarb';
+    }
+
     const response = await fetch(baseURL);
     const data = await response.json();
     generateHTML(data.results);
@@ -52,7 +85,6 @@ function generateHTML(the_results){
                 <h1 class="title">${result.title}</h1>
                 <a class="view_button" href="#" onclick="showRecipeDetails(${result.id})">View original Recipe</a>
             </div>
-            <p class="item_data">Ingredients or nutrition goes here</p>
         </div>
        `
     })
