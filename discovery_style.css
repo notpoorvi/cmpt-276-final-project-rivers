@@ -2,6 +2,15 @@ body{
     margin: 0;
 }
 
+.container{
+    display: flex;
+    justify-content: space-around;
+}
+
+#youtubeResults{
+    width: 40%;
+}
+
 #header{
     display: flex;
     justify-content: space-evenly;
@@ -39,10 +48,18 @@ img{
 
 .search_result{
     margin-top: 50px;
-    width: 100%;
-    display: grid;
+    width: 40%;
+    /* width: 100%; */
+    /* display: grid; */
+    display: flex;
+    flex-direction: column;
     grid-gap: 25px;
-    grid-template: auto/repeat(auto-fit,minmax(300px,1fr));
+    /* grid-template: auto/repeat(auto-fit,minmax(300px,1fr)); */
+}
+
+.youtube_item{
+    border: 3px solid rgb(84, 64, 210);
+    margin: 20px 0px;
 }
 
 .hidden {
