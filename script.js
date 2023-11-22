@@ -26,7 +26,6 @@ function searchRecipe(event) {
     window.location.href = "discovery_page.html?recipe=" + encodeURIComponent(recipeName);
 }
 
-// JavaScript code
 document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('aboutUs').addEventListener('click', function (e) {
         e.preventDefault();

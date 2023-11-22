@@ -7,8 +7,22 @@ body{
     justify-content: space-around;
 }
 
+header h4 a{
+    text-decoration: none;
+    color: black;
+}
+
+header h4 a:hover{
+    text-decoration: none;
+    color: black;
+}
+
 #youtubeResults{
-    width: 40%;
+    margin-top: -1vh;
+}
+
+.no-results-message {
+    background-color: red; /* Add styling as needed */
 }
 
 #header{
@@ -38,6 +52,17 @@ img{
     justify-content: space-evenly;
 }
 
+.section-heading{
+    display: inline;
+    text-align: center;
+}
+
+.spoonacular-results, .youtube-results{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
 .brand{
     font-family: 'Italianno', cursive;
     font-size: 3em;
@@ -47,9 +72,8 @@ img{
 }
 
 .search_result{
-    margin-top: 50px;
-    width: 40%;
-    /* width: 100%; */
+    margin-top: 2vh;
+    /* width: 40%; */
     /* display: grid; */
     display: flex;
     flex-direction: column;
@@ -75,6 +99,10 @@ img{
     height: 3em;
     padding-top: 0.6%;
     border-bottom: 2px solid black;
+}
+
+#filters div{
+    margin: 0px 0.5vw;
 }
 
 #filter-button{
