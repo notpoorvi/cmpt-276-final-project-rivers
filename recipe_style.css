@@ -1,0 +1,43 @@
+body{
+    margin: 0;
+}
+
+#header{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+    border-bottom: 5px solid black;
+    /* height: 10vh; */
+    height: 10%;
+}
+
+.brand{
+    font-family: 'Italianno', cursive;
+    font-size: 3em;
+    text-decoration: none;
+    color: black;
+    font-weight: lighter;
+}
+
+#recipeName{
+    text-align: center;
+    color: rgb(84, 64, 210);
+    font-family: 'Italianno', cursive;
+    font-size: 3rem;
+    /* margin-top: 1%; */
+    position: relative;
+    right: 15%;
+}
+
+.main{
+    border: 10px solid rgb(84, 64, 210);
+}
+
+#recipeImage{
+    display: block;
+    margin: auto;
+    border: 10px solid white;
+    box-shadow: 0 0 0 5px black;
+    width: 50%;
+    margin-top: 3%;
+}
