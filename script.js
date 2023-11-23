@@ -19,3 +19,36 @@ function updateTestimonial() {
     const testimonialElement = document.querySelector('.testimonial');
     testimonialElement.innerHTML = testimonials[currentTestimonial];
 }
+
+function searchRecipe(event) {
+    event.preventDefault();
+    var recipeName = document.getElementById("search").value;
+    window.location.href = "discovery_page.html?recipe=" + encodeURIComponent(recipeName);
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('aboutUs').addEventListener('click', function (e) {
+        e.preventDefault();
+        scrollToSection('about-us');
+    });
+
+    document.getElementById('contactUs').addEventListener('click', function (e) {
+        e.preventDefault();
+        scrollToSection('contact-us');
+    });
+});
+
+function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+
+    // Scroll to the section
+    window.scrollTo({
+        top: section.offsetTop,
+        behavior: 'smooth'
+    });
+
+    section.classList.add('glow');
+    setTimeout(function () {
+        section.classList.remove('glow');
+    }, 2000);
+}

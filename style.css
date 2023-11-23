@@ -40,6 +40,10 @@ body{
     right: 1%;
 }
 
+.searchform.cf{
+    display: contents;
+}
+
 #submitsearch{
     height: 60%;
 }
@@ -49,14 +53,22 @@ body{
 }
 
 #name{
-    position: absolute;
     font-family: 'Italianno', cursive;
     font-size: 48px;
     text-decoration: none;
     color: black;
     font-weight: lighter;
-    top: 2%;
-    left: 7%;
+}
+
+.name-logo{
+    display: flex;
+    justify-content: space-between;
+}
+
+#logo{
+    margin: 0 1% 1% -5%;
+    width: 50px;
+    height: 50px;
 }
 
 #quote{
@@ -266,4 +278,24 @@ body{
         height: 0;
         margin: 10px 0;
     }
+}
+
+/* CSS code */
+@keyframes glow {
+    0% {
+        background-color: rgb(255, 255, 207); /* Initial color */
+        box-shadow: 0 0 30px rgb(255, 255, 207); /* Initial box shadow */
+    }
+    50% {
+        background-color: rgb(255, 255, 255); /* Midway color */
+        box-shadow: 0 0 40px rgb(255, 255, 255); /* Midway box shadow */
+    }
+    100% {
+        background-color: rgb(255, 255, 207); /* Final color */
+        box-shadow: 0 0 30px rgb(255, 255, 207); /* Final box shadow */
+    }
+}
+
+.glow {
+    animation: glow 2s infinite;
 }

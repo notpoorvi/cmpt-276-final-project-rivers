@@ -1,0 +1,78 @@
+body{
+    margin: 0;
+}
+
+#logo{
+    margin: 0 1% 1% -5%;
+    width: 50px;
+    height: 50px;
+}
+
+#header {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    border-bottom: 5px solid black;
+    height: 10%;
+}
+
+.brand {
+    font-family: 'Italianno', cursive;
+    font-size: 3em;
+    font-weight: lighter;
+}
+
+.brand a{
+    text-decoration: none;
+    color: black;
+}
+
+.brand a:hover{
+    text-decoration: none;
+    color: black;
+}
+
+#recipeName{
+    text-align: center;
+    color: rgb(84, 64, 210);
+    font-family: 'Italianno', cursive;
+    font-size: 3rem;
+    margin-top: 2%;
+}
+
+.main{
+    border: 10px solid rgb(84, 64, 210);
+    background-color: #FFF6E7;
+}
+
+#recipeImage{
+    display: block;
+    margin: auto;
+    border: 10px solid white;
+    box-shadow: 0 0 0 5px black;
+    width: 50%;
+    margin-top: 3%;
+}
+
+.section{
+    margin: 10vh 0;
+}
+
+main h2{
+    text-align: center;
+    background-color: rgb(217, 217, 217);
+    padding: 3px;
+    margin: 0 35vh 4vh 35vh;
+    font-family: 'Italianno', cursive;
+    font-size: 3rem;
+}
+
+.section ol, ul, p{
+    margin: 0 35vh;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.3rem;
+}
+
+#nutrition p{
+    text-align: center;
+}

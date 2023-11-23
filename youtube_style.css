@@ -1,0 +1,78 @@
+#header {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    border-bottom: 5px solid black;
+    height: 10%;
+}
+
+#logo{
+    margin: 0 1% 1% -5%;
+    width: 50px;
+    height: 50px;
+}
+
+.brand {
+    font-family: 'Italianno', cursive;
+    font-size: 3em;
+    font-weight: lighter;
+}
+
+.brand a {
+    text-decoration: none;
+    color: black;
+}
+
+.brand a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+#videoTitle {
+    text-align: center;
+    color: rgb(84, 64, 210);
+    font-family: 'Italianno', cursive;
+    font-size: 3rem;
+    margin-top: 2%;
+}
+
+.main {
+    border: 10px solid rgb(84, 64, 210);
+    background-color: #FFF6E7;
+}
+
+#youtubePlayer {
+    display: flex;
+    justify-content: center;
+    margin: 4% 0;
+}
+
+#commentsContainer {
+    height: 35vh;
+    overflow-y: auto;
+    border: 4px solid rgb(84, 64, 210);
+    padding: 10px;
+    margin: 0 35vh 2%;
+}
+
+.comments-heading, .related-videos-heading{
+    text-align: center;
+    background-color: rgb(217, 217, 217);
+    padding: 3px;
+    margin: 0 35vh 4vh 35vh;
+    font-family: 'Italianno', cursive;
+    font-size: 3rem;
+    margin-bottom: 0;
+}
+
+.comments p{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.3rem;
+}
+
+#relatedVideosContainer{
+    margin: 0 35vh 2%;
+    display: flex;
+    border: 4px solid rgb(84, 64, 210);
+}
