@@ -3,8 +3,8 @@ const searchResultDiv = document.querySelector('.search_result');
 const container = document.querySelector('.container');
 let searchQuery = '';
 
-const APP_key = '34959198c63d4883b456da1d12c36061';
-// const APP_key = '162949a76b0647f990d6e833b4703b95';
+// const APP_key = '34959198c63d4883b456da1d12c36061';
+const APP_key = '162949a76b0647f990d6e833b4703b95';
 
 function getQueryParam(param) {
     const urlParams = new URLSearchParams(window.location.search);
@@ -125,15 +125,30 @@ function generateYouTubeHTML(youtubeResults) {
         const thumbnailUrl = result.snippet.thumbnails.medium.url;
 
         generatedItems += `
-            <div class="youtube_item">
-                <a href="https://www.youtube.com/watch?v=${videoId}" target="_blank">
+            <div class="youtube_item" onclick="showYoutubeRecipeDetails('${videoId}', '${title}')">
+                <a href=#>
                     <img src="${thumbnailUrl}" alt="${title}">
                     <p class="youtube_title">${title}</p>
                 </a>
             </div>
         `;
+        // generatedItems += `
+        //     <div class="youtube_item" onclick="showYoutubeRecipeDetails('${videoId}', '${title}')">
+        //         <a href="https://www.youtube.com/watch?v=${videoId}" target="_blank">
+        //             <img src="${thumbnailUrl}" alt="${title}">
+        //             <p class="youtube_title">${title}</p>
+        //         </a>
+        //     </div>
+        // `;
     });
 
     const youtubeResultsDiv = document.getElementById('youtubeResults');
     youtubeResultsDiv.innerHTML = generatedItems;
+}
+
+function showYoutubeRecipeDetails(videoId, title) {
+    // Store the selected video details in localStorage
+    localStorage.setItem('selectedVideoDetails', JSON.stringify({ videoId, title }));
+    // Redirect to the youtube.html page
+    window.location.href = 'youtube.html';
 }
