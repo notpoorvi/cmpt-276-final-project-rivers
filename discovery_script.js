@@ -3,26 +3,24 @@ const searchResultDiv = document.querySelector('.search_result');
 const container = document.querySelector('.container');
 let searchQuery = '';
 
-//customize for spoonacular
-
 const APP_key = '34959198c63d4883b456da1d12c36061';
 // const APP_key = '162949a76b0647f990d6e833b4703b95';
 
-// Function to get URL parameters
 function getQueryParam(param) {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(param);
 }
 
-searchForm.addEventListener('submit', (e) => {
+searchForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     searchQuery = e.target.querySelector('input').value;
     console.log(searchQuery);
-    fetchAPI();
+    await fetchAPI(); 
+    fetchYouTubeAPI(); 
 });
 
 function applyFilters() {
-    fetchAPI(); // Call the fetchAPI function with the selected filters
+    fetchAPI();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -32,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('searchRecipeInput').value = searchQuery;
     // Fetch recipes
     fetchAPI();
+    fetchYouTubeAPI();
 });
 
 async function fetchAPI(){
@@ -96,4 +95,45 @@ function showRecipeDetails(recipeId) {
     localStorage.setItem('selectedRecipeId', recipeId);
     // Redirect to the recipe.html page
     window.location.href = 'recipe.html';
+}
+
+async function fetchYouTubeAPI() {
+    const youtubeResultsDiv = document.getElementById('youtubeResults');
+
+    const youtubeAPIKey = 'AIzaSyDoWT8CPztZQtjIrLpuVI_w5aAm5FdvIuE';
+    
+    if (!searchQuery) {
+        searchQuery = 'easy';
+    }
+
+    const youtubeQuery = `${searchQuery} recipe`;
+
+    const youtubeBaseURL = 'https://www.googleapis.com/youtube/v3/search';
+
+    const youtubeResponse = await fetch(`${youtubeBaseURL}?part=snippet&maxResults=40&q=${youtubeQuery}&key=${youtubeAPIKey}`);
+    const youtubeData = await youtubeResponse.json();
+
+    generateYouTubeHTML(youtubeData.items);
+    youtubeResultsDiv.classList.remove('hidden');
+}
+
+function generateYouTubeHTML(youtubeResults) {
+    let generatedItems = '';
+    youtubeResults.forEach(result => {
+        const videoId = result.id.videoId;
+        const title = result.snippet.title;
+        const thumbnailUrl = result.snippet.thumbnails.medium.url;
+
+        generatedItems += `
+            <div class="youtube_item">
+                <a href="https://www.youtube.com/watch?v=${videoId}" target="_blank">
+                    <img src="${thumbnailUrl}" alt="${title}">
+                    <p class="youtube_title">${title}</p>
+                </a>
+            </div>
+        `;
+    });
+
+    const youtubeResultsDiv = document.getElementById('youtubeResults');
+    youtubeResultsDiv.innerHTML = generatedItems;
 }
