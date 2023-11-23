@@ -2,6 +2,16 @@ body{
     margin: 0;
 }
 
+#logo{
+    margin: 0 1% 1% 1%;
+    width: 75px;
+    height: 45px;
+}
+
+.name-logo{
+    display: flex;
+}
+
 .container{
     display: flex;
     justify-content: space-around;

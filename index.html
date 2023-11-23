@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EasyasPie</title>
-    <link rel="shortcut icon" type="image/png" href="https://clipart-library.com/img1/1105927.png"/>
+    <link rel="icon" href="images/pie-favicon.png">
+    <!-- <link rel="shortcut icon" type="image/png" href="https://clipart-library.com/img1/1105927.png"/> -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -20,7 +21,11 @@
 <body>
     <script src="script.js"></script>
     <header class="header">
-        <h4><a href="#" id="name">EasyasPie.com</a></h4>
+        <div class="name-logo">
+            <img src="images/pie-favicon.png" id="logo" alt="">
+            <h4 id="name">EasyasPie</h4>
+        </div>
+
         <div id="links">
             <a class="nav-link" id="aboutUs" href="#about-us">About Us</a>
             <a class="nav-link" id="contactUs" href="#contact-us">Contact Us</a>
@@ -41,20 +46,22 @@
     <div class="text-center" id="tagline">We take complex recipes and make them simple</div>
     <article class="d-flex justify-content-around" id="features">
         <div id="feature-1">
-            <a href="discovery_page.html" class="circle-background mx-2" id="feature-1-icon" target="_blank" onclick="searchRecipe(event)">
-            <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" fill="currentColor" class="bi bi-play-btn"
-                viewBox="0 0 16 16">
-                <path d="M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z" />
-                <path
-                    d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm15 0a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
-            </svg>
-        </a>
-        <p class="text-center">Video Demos</p>
+            <a href="discovery_page.html" class="circle-background mx-2" id="feature-1-icon" target="_blank"
+                onclick="searchRecipe(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" fill="currentColor"
+                    class="bi bi-play-btn" viewBox="0 0 16 16">
+                    <path d="M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z" />
+                    <path
+                        d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm15 0a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
+                </svg>
+            </a>
+            <p class="text-center">Video Demos</p>
         </div>
         <div id="feature-2">
-            <a href="discovery_page.html" class="circle-background mx-2" id="feature-2-icon" target="_blank" onclick="searchRecipe(event)">
-                <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" fill="currentColor" class="bi bi-newspaper"
-                    viewBox="0 0 16 16">
+            <a href="discovery_page.html" class="circle-background mx-2" id="feature-2-icon" target="_blank"
+                onclick="searchRecipe(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" fill="currentColor"
+                    class="bi bi-newspaper" viewBox="0 0 16 16">
                     <path
                         d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .3-.05.654-.238.972h.738a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 1 1 0v9a1.5 1.5 0 0 1-1.5 1.5H1.497A1.497 1.497 0 0 1 0 13.5v-11zM12 14c.37 0 .654-.211.853-.441.092-.106.147-.279.147-.531V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5v11c0 .278.223.5.497.5H12z" />
                     <path
@@ -64,16 +71,17 @@
             <p class="text-center">Simplified Intructions</p>
         </div>
         <div id="feature-3">
-            <a href="discovery_page.html" class="circle-background mx-2" id="feature-3-icon" target="_blank" onclick="searchRecipe(event)">
-            <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" fill="currentColor" class="bi bi-search"
-                viewBox="0 0 16 16">
-                <path
-                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-            </svg>
-        </a>
-        <p class="text-center">Easy Search</p>
+            <a href="discovery_page.html" class="circle-background mx-2" id="feature-3-icon" target="_blank"
+                onclick="searchRecipe(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" fill="currentColor"
+                    class="bi bi-search" viewBox="0 0 16 16">
+                    <path
+                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                </svg>
+            </a>
+            <p class="text-center">Easy Search</p>
         </div>
-        
+
     </article>
     <div class="image-user-testimonials">
         <div class="image-container">
@@ -82,22 +90,29 @@
         <div class="user-testimonials">
             <div class="testimonial-container">
                 <div class="arrow left-arrow" onclick="showPreviousTestimonial()">&#9665;</div>
-                <div><h2>User Testimonials</h2>
-                <p class="testimonial">“I never used to cook, but this website makes it so easy to find good recipes!”<br>-- Emily R.</p></div>
-                
+                <div>
+                    <h2>User Testimonials</h2>
+                    <p class="testimonial">“I never used to cook, but this website makes it so easy to find good
+                        recipes!”<br>-- Emily R.</p>
+                </div>
+
                 <div class="arrow right-arrow" onclick="showNextTestimonial()">&#9655;</div>
             </div>
         </div>
     </div>
     <div id="purpose-container">
         <h3>Our Purpose</h3>
-        <p>The purpose of EasyasPie.com is to compile easy to follow recipes that make it simple for users to find new recipes to bake or cook! The user-friendly platform incorporates video demonstrations for users to follow along with as they cook. With listed nutrition facts, health-conscious users can be mindful of their meal or dessert selections!</p>
+        <p>The purpose of EasyasPie.com is to compile easy to follow recipes that make it simple for users to find new
+            recipes to bake or cook! The user-friendly platform incorporates video demonstrations for users to follow
+            along with as they cook. With listed nutrition facts, health-conscious users can be mindful of their meal or
+            dessert selections!</p>
     </div>
     <div class="blank-space"></div>
     <footer id="footer">
         <div id="about-us">
             <h5>About Us</h5>
-            <div>This website was developed by Poorvi Bhatia, Jason Koonar, Andrew La Grange and Luis Ramirez. We are starving students at SFU, who would like to eat some of this delicious food.</div>
+            <div>This website was developed by Poorvi Bhatia, Jason Koonar, Andrew La Grange and Luis Ramirez. We are
+                starving students at SFU, who would like to eat some of this delicious food.</div>
         </div>
         <div class="separator"></div>
         <div id="contact-us">
@@ -105,7 +120,7 @@
             <div>Don't bother, just cook your food, i'm sure it'll turn out great!</div>
         </div>
     </footer>
-    
+
 </body>
 
 </html>

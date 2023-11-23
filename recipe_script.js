@@ -1,17 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Retrieve the selected recipeId from localStorage
     const recipeId = localStorage.getItem('selectedRecipeId');
     if (recipeId) {
         fetchRecipeDetails(recipeId);
     } else {
-        // Handle the case where no recipeId is found (optional)
         console.error('No recipeId found.');
     }
 });
 
 async function fetchRecipeDetails(recipeId) {
-    const APP_key = '34959198c63d4883b456da1d12c36061';
-    // const APP_key = '162949a76b0647f990d6e833b4703b95';
+    // const APP_key = '34959198c63d4883b456da1d12c36061';
+    const APP_key = '162949a76b0647f990d6e833b4703b95';
     const baseURL = `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${APP_key}`;
     
     try {

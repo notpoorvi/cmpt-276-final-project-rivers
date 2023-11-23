@@ -53,14 +53,22 @@ body{
 }
 
 #name{
-    position: absolute;
     font-family: 'Italianno', cursive;
     font-size: 48px;
     text-decoration: none;
     color: black;
     font-weight: lighter;
-    top: 2%;
-    left: 7%;
+}
+
+.name-logo{
+    display: flex;
+    justify-content: space-between;
+}
+
+#logo{
+    margin: 0 1% 1% -5%;
+    width: 50px;
+    height: 50px;
 }
 
 #quote{
