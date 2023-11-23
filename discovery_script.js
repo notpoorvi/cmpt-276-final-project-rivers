@@ -3,10 +3,7 @@ const searchResultDiv = document.querySelector('.search_result');
 const container = document.querySelector('.container');
 let searchQuery = '';
 
-//customize for spoonacular
-
-// const APP_key = '34959198c63d4883b456da1d12c36061';
-const APP_key = '162949a76b0647f990d6e833b4703b95';
+const spoonacularApiKey = '162949a76b0647f990d6e833b4703b95';
 const youtubeApiKey = 'AIzaSyDvtNzdBCepDaWXlERreRS1HRl1vU_Z4mA';
 
 // Function to get URL parameters
@@ -20,21 +17,46 @@ searchForm.addEventListener('submit', (e) => {
     searchQuery = e.target.querySelector('input').value;
     console.log(searchQuery);
     if (searchQuery.trim() !== '') {
-        fetchAPI();
+        fetchSpoonacularAPI();
+        fetchYoutubeAPI();
     }
 });
 
-/*document.addEventListener('DOMContentLoaded', () => {
-    // Get the recipe name from the URL parameter
-    searchQuery = getQueryParam('recipe');
-    // Set the search bar value
-    document.getElementById('searchRecipeInput').value = searchQuery;
-    // Fetch recipes
-    fetchAPI();
-});*/
+async function fetchSpoonacularAPI(){
+    const baseURL = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${spoonacularApiKey}&query=${searchQuery}`;
+    try {
+        const response = await fetch(baseURL);
+        const data = await response.json();
+        console.log('Spoonacular API Response:', data);
+        if (data.results && data.results.length > 0) {
+            generateSpoonacularHTML(data.results);
+            searchResultDiv.classList.remove('hidden');
+        } else {
+            console.log('No results from Spoonacular API');
+        }
+    } catch (error) {
+        console.error('Error fetching from Spoonacular API:', error);
+    }
+}
+function generateSpoonacularHTML(spoonacularResults){
+    let generateditem = '';
+    spoonacularResults.map(result => {
+       generateditem +=
+       `
+        <div class="item" onclick="showRecipeDetails(${result.id})">
+            <img src="${result.image}" alt="">
+            <div class="flex_container">
+                <h1 class="title">${result.title}</h1>
+                <a class="view_button" href="#" onclick="showRecipeDetails(${result.id})">View original Recipe</a>
+            </div>
+            <p class="item_data">Ingredients or nutrition goes here</p>
+        </div>
+       `
+    })
+    searchResultDiv.innerHTML = generateditem;
+}
 
-async function fetchAPI() {
-    searchResultDiv.classList.add('hidden');
+async function fetchYoutubeAPI() {
     const baseURL = `https://www.googleapis.com/youtube/v3/search`;
     const params = {
         part: 'snippet',
@@ -47,16 +69,13 @@ async function fetchAPI() {
     const url = `${baseURL}?${new URLSearchParams(params)}`;
     const response = await fetch(url);
     const data = await response.json();
-    generateHTML(data.items);
-    searchResultDiv.classList.remove('hidden');
+    generateYoutubeHTML(data.items);
     console.log(data);
 }
-
-function generateHTML(youtubeResults) {
+function generateYoutubeHTML(youtubeResults) {
     let generateditem = '';
     youtubeResults.forEach(result => {
         const thumbnailUrl = result.snippet.thumbnails.medium.url;
-
         generateditem +=
         `
         <div class="item">
@@ -71,42 +90,10 @@ function generateHTML(youtubeResults) {
         </div>
        `;
     });
-
     searchResultDiv.innerHTML = generateditem;
 }
-
-/*async function fetchAPI(){
-    searchResultDiv.classList.add('hidden');
-    const baseURL = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${APP_key}&query=${searchQuery}`;
-    const response = await fetch(baseURL);
-    const data = await response.json();
-    generateHTML(data.results);
-    searchResultDiv.classList.remove('hidden');
-    console.log(data);
-}
-
-
-function generateHTML(the_results){
-    let generateditem = '';
-    the_results.map(result => {
-       generateditem +=
-       `
-        <div class="item" onclick="showRecipeDetails(${result.id})">
-            <img src="${result.image}" alt="">
-            <div class="flex_container">
-                <h1 class="title">${result.title}</h1>
-                <a class="view_button" href="#" onclick="showRecipeDetails(${result.id})">View original Recipe</a>
-            </div>
-            <p class="item_data">Ingredients or nutrition goes here</p>
-        </div>
-       `
-    })
-    searchResultDiv.innerHTML = generateditem;
-}*/
 
 function showRecipeDetails(recipeId) {
-    // Store the selected recipeId in localStorage
     localStorage.setItem('selectedRecipeId', recipeId);
-    // Redirect to the recipe.html page
     window.location.href = 'recipe.html';
 }

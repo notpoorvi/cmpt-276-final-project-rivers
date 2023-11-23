@@ -22,8 +22,15 @@ img{
     object-fit: cover;
 }
 #results{
-    padding: 100px;
+    padding: 20px;
     border: 10px solid rgb(84, 64, 210);
+    display: flex;
+    justify-content: space-between;
+}
+
+#spoonacularResults,
+#youtubeResults {
+    width: 48%;
 }
 
 .brand{
@@ -35,11 +42,11 @@ img{
 }
 
 .search_result {
-    margin-top: 50px;
+    margin-top: 20px;
     width: 100%;
     display: grid;
     grid-gap: 25px;
-    grid-template-columns: 1fr;
+    grid-template-columns: 2fr;
 }
 
 .hidden {
