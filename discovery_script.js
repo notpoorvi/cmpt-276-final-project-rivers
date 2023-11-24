@@ -100,7 +100,8 @@ function showRecipeDetails(recipeId) {
 async function fetchYouTubeAPI() {
     const youtubeResultsDiv = document.getElementById('youtubeResults');
 
-    const youtubeAPIKey = 'AIzaSyDoWT8CPztZQtjIrLpuVI_w5aAm5FdvIuE';
+    const youtubeAPIKey = 'AIzaSyCB3qbGjQvnioKgkvGKGLvC261taR8tejE';
+    // const youtubeAPIKey = 'AIzaSyDoWT8CPztZQtjIrLpuVI_w5aAm5FdvIuE';
     
     if (!searchQuery) {
         searchQuery = 'easy';

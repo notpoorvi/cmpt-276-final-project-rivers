@@ -86,3 +86,14 @@
     display: flex;
     border: 4px solid rgb(84, 64, 210);
 }
+
+.comment{
+    background-color: #d9d9d9;
+}
+
+#author{
+    margin-bottom: 5px;
+    text-decoration: underline;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+}
