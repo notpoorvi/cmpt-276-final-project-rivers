@@ -54,4 +54,3 @@ function displayComments(comments) {
         commentsContainer.appendChild(commentElement);
     });
 }
-}
