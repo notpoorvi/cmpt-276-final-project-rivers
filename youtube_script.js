@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('videoTitle').textContent = title;
         embedYouTubePlayer(videoId);
         fetchYouTubeComments(videoId);
+        fetchRelatedVideos(videoId);
     } else {
         console.error('No video details found.');
     }
@@ -53,4 +54,41 @@ function displayComments(comments) {
         commentElement.appendChild(textElement);
         commentsContainer.appendChild(commentElement);
     });
+}
+
+function fetchRelatedVideos(videoId) {
+    const youtubeResultsDiv = document.getElementById('relatedVideosContainer');
+    const youtubeBaseURL = 'https://www.googleapis.com/youtube/v3/search';
+    const youtubeResponse = fetch('${youtubeBaseURL}?part=snippet&maxResults=10&relatedToVideoId=${videoId}&type=video&key=${apiKey}');
+    const youtubeData = youtubeResponse.json;
+    displayRelatedVideos(youtubeData.items);
+    youtubeResultsDiv.classList.remove('hidden');
+}
+
+function displayRelatedVideos(videos) {
+    let generatedItems = '';
+    relatedVideos.forEach(video => {
+        const videoId = video.id.videoId;
+        const title = video.snippet.title;
+        const thumbnailUrl = video.snippet.thumbnails.medium.url;
+
+        generatedItems += `
+            <div class="related-video" onclick="showRelatedVideoDetails('${videoId}', '${title}')">
+                <a href="#">
+                    <img src="${thumbnailUrl}" alt="${title}">
+                    <p class="related-video-title">${title}</p>
+                </a>
+            </div>
+        `;
+    });
+
+    const relatedVideosDiv = document.getElementById('relatedVideosContainer');
+    relatedVideosDiv.innerHTML = generatedItems;
+};
+
+function showYoutubeRecipeDetails(videoId, title) {
+    // Store the selected video details in localStorage
+    localStorage.setItem('selectedVideoDetails', JSON.stringify({ videoId, title }));
+    // Redirect to the youtube.html page
+    window.location.href = 'youtube.html';
 }
