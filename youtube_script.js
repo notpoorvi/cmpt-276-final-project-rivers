@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('videoTitle').textContent = title;
         embedYouTubePlayer(videoId);
         fetchYouTubeComments(videoId);
-        fetchRelatedVideos(videoId);
+        // fetchRelatedVideos(videoId);
+        fetchRelatedVideos(title);
     } else {
         console.error('No video details found.');
     }
@@ -65,18 +66,26 @@ function displayComments(comments) {
     });
 }
 
-function fetchRelatedVideos(videoId) {
+function fetchRelatedVideos(query) {
     const youtubeResultsDiv = document.getElementById('relatedVideosContainer');
     const youtubeBaseURL = 'https://www.googleapis.com/youtube/v3/search';
-    const youtubeResponse = fetch(`${youtubeBaseURL}?part=snippet&maxResults=10&relatedToVideoId=${videoId}&type=video&key=${apiKey}`);
-    const youtubeData = youtubeResponse.json;
-    displayRelatedVideos(youtubeData.items);
-    youtubeResultsDiv.classList.remove('hidden');
+    const youtubeResponse = fetch(`${youtubeBaseURL}?part=snippet&maxResults=10&q=${query}&type=video&key=${apiKey}`);
+
+    youtubeResponse
+        .then(response => response.json())
+        .then(data => {
+            displayRelatedVideos(data.items);
+            youtubeResultsDiv.classList.remove('hidden');
+        })
+        .catch(error => {
+            console.error('Error fetching related videos:', error);
+        });
 }
 
 function displayRelatedVideos(videos) {
     let generatedItems = '';
-    relatedVideos.forEach(video => {
+
+    videos.forEach(video => {
         const videoId = video.id.videoId;
         const title = video.snippet.title;
         const thumbnailUrl = video.snippet.thumbnails.medium.url;
@@ -93,11 +102,9 @@ function displayRelatedVideos(videos) {
 
     const relatedVideosDiv = document.getElementById('relatedVideosContainer');
     relatedVideosDiv.innerHTML = generatedItems;
-};
+}
 
-function showYoutubeRecipeDetails(videoId, title) {
-    // Store the selected video details in localStorage
+function showRelatedVideoDetails(videoId, title) {
     localStorage.setItem('selectedVideoDetails', JSON.stringify({ videoId, title }));
-    // Redirect to the youtube.html page
     window.location.href = 'youtube.html';
 }

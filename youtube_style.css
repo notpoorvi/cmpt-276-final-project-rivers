@@ -6,7 +6,7 @@
     height: 10%;
 }
 
-#logo{
+#logo {
     margin: 0 1% 1% -5%;
     width: 50px;
     height: 50px;
@@ -55,7 +55,8 @@
     margin: 0 35vh 2%;
 }
 
-.comments-heading, .related-videos-heading{
+.comments-heading,
+.related-videos-heading {
     text-align: center;
     background-color: rgb(217, 217, 217);
     padding: 3px;
@@ -65,33 +66,43 @@
     margin-bottom: 0;
 }
 
-.comments p{
+.comments p {
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.3rem;
 }
 
-.simplified-comment {
-    border: 1px solid #ccc;
-    margin: 10px;
+#relatedVideosContainer {
+    height: 45vh;
     padding: 10px;
-}
-
-.simplified-comment p {
-    margin: 0;
-}
-
-#relatedVideosContainer{
-    margin: 0 35vh 2%;
-    display: flex;
+    overflow-y: auto;
+    display: grid;
+    margin: 1rem 35vh 2%;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
     border: 4px solid rgb(84, 64, 210);
 }
 
-.comment{
+.related-video {
+    text-align: center;
+}
+
+.related-video img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+}
+
+.related-video-title {
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.comment {
     background-color: #d9d9d9;
 }
 
-#author{
+#author {
     margin-bottom: 5px;
     text-decoration: underline;
     font-family: Arial, Helvetica, sans-serif;
