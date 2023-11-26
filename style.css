@@ -3,7 +3,7 @@
 }
 
 body {
-  height: 1685px;
+  /* height: 1685px; */
   margin: 0;
   padding: 0;
 }
@@ -15,7 +15,9 @@ body {
   flex-wrap: wrap;
 }
 
-.header, #links, #submit-container {
+.header, 
+#links, 
+#submit-container {
   display: flex;
   justify-content: space-around;
 }
@@ -28,7 +30,7 @@ body {
 }
 
 #links a {
-  border: 2px solid rgba(84, 64, 210, 0.8);
+  border: 2px solid rgba(84, 64, 210, 100%);
   border-radius: 10px;
   color: black;
   margin: 2px;
@@ -53,7 +55,7 @@ body {
 }
 
 #name {
-  font-family: Italianno, cursive;
+  font-family: Italianno, cursive, serif;
   font-size: 48px;
   text-decoration: none;
   color: black;
@@ -83,12 +85,12 @@ body {
   top: 20%;
   width: 80%;
   left: 10%;
-  font-family: Grape Nuts;
+  font-family: "Grape Nuts";
   font-size: 42px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  color: #FFF;
+  color: #fff;
 }
 
 #quote p {
@@ -108,7 +110,7 @@ body {
 #tagline {
   font-size: 20px;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: rgba(217, 217, 217, 1);;
+  background-color: rgba(217, 217, 217, 100%);
   height: 34px;
   width: 90%;
   display: flex;
@@ -213,14 +215,13 @@ body {
   left: 80px;
   top: 80px;
   border: 10px solid white;
-  box-shadow: 0 0 0 10px black, 0 0 0 20px rgba(84, 64, 210, 1);
+  box-shadow: 0 0 0 10px black, 0 0 0 20px rgba(84, 64, 210, 100%);
   margin: -30px 10px;
 }
 
 #purpose-container {
-  margin: 10px 80px;
-  background-color: rgba(255, 234, 203, 1);
-  border: 8px solid rgba(84, 64, 210, 1);
+  background-color: rgba(255, 234, 203, 100%);
+  border: 8px solid rgba(84, 64, 210, 100%);
   margin: 0 65px;
   padding: 5px 50px;
   font-family: Arial, Helvetica, sans-serif;
@@ -231,9 +232,9 @@ body {
 }
 
 #purpose-container h3 {
-  font-family: 'Grape Nuts', cursive;
+  font-family: "Grape Nuts", cursive;
   font-size: 64px;
-  color: rgba(84, 64, 210, 1);
+  color: rgba(84, 64, 210, 100%);
 }
 
 .blank-space {
@@ -241,22 +242,24 @@ body {
 }
 
 #footer {
-  background-color: rgba(255, 234, 203, 1);
+  background-color: rgba(255, 234, 203, 100%);
   color: black;
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding: 20px;
-  min-height: 0vh;
-  border: 5px solid rgba(84, 64, 210, 1);
+  min-height: 0;
+  border: 5px solid rgba(84, 64, 210, 100%);
 }
 
-#about-us, #contact-us {
+#about-us, 
+#contact-us {
   text-align: center;
   width: 70%;
 }
 
-#about-us h5, #contact-us h5 {
+#about-us h5, 
+#contact-us h5 {
   margin-bottom: 10px;
 }
 
@@ -270,7 +273,7 @@ body {
   #footer {
     flex-direction: column;
     text-align: center;
-    }
+  }
 
 
   .separator {
@@ -279,24 +282,24 @@ body {
     width: 100%;
     height: 0;
     margin: 10px 0;
-    }
+  }
 }
 
 @keyframes glow {
   0% {
-    background-color: rgba(255, 255, 207, 1);
-    box-shadow: 0 0 30px rgba(255, 255, 207, 1);
-    }
+    background-color: rgba(255, 255, 207, 100%);
+    box-shadow: 0 0 30px rgba(255, 255, 207, 100%);
+  }
 
   50% {
-    background-color: rgba(255, 255, 255, 1);
-    box-shadow: 0 0 40px rgba(255, 255, 255, 1);
-    }
+    background-color: rgba(255, 255, 255, 100%);
+    box-shadow: 0 0 40px rgba(255, 255, 255, 100%);
+  }
 
   100% {
-    background-color: rgba(255, 255, 207, 1);
-    box-shadow: 0 0 30px rgba(255, 255, 207, 1);
-    }
+    background-color: rgba(255, 255, 207, 100%);
+    box-shadow: 0 0 30px rgba(255, 255, 207, 100%);
+  }
 }
 
 .glow {

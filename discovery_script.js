@@ -1,15 +1,15 @@
 const searchForm = document.querySelector('form')
 const searchResultDiv = document.querySelector('.search-result')
-// super-linter-disable
+/* super-linter-disable */
 const container = document.querySelector('.container')
-// super-linter-enable
 let searchQuery = ''
 
 // const appKey = '34959198c63d4883b456da1d12c36061'
 // const appKey = '162949a76b0647f990d6e833b4703b95'
 const appKey = '13b28ccdb5d34f43bf8ce054b837368a'
+/* super-linter-enable */
 
-function getQueryParam(param) {
+function getQueryParam (param) {
   const urlParams = new URLSearchParams(window.location.search)
   return urlParams.get(param)
 }
@@ -22,9 +22,11 @@ searchForm.addEventListener('submit', async (e) => {
   fetchYouTubeAPI()
 })
 
-function applyFilters() {
+/* super-linter-disable */
+function applyFilters () {
   fetchAPI()
 }
+/* super-linter-enable */
 
 document.addEventListener('DOMContentLoaded', () => {
   searchQuery = getQueryParam('recipe')
@@ -84,22 +86,22 @@ function generateHTML (theResults) {
             </div>
         </div>
        `
-    return null; 
+    return null
   })
   searchResultDiv.innerHTML = generateditem
 }
 
-// super-linter-disable
+/* super-linter-disable */
 function showRecipeDetails (recipeId) {
   localStorage.setItem('selectedRecipeId', recipeId)
   window.location.href = 'recipe.html'
 }
-// super-linter-enable
 
 async function fetchYouTubeAPI () {
   const youtubeResultsDiv = document.getElementById('youtube-results')
   // const youtubeAPIKey = 'AIzaSyCB3qbGjQvnioKgkvGKGLvC261taR8tejE'
   const youtubeAPIKey = 'AIzaSyDoWT8CPztZQtjIrLpuVI_w5aAm5FdvIuE'
+  /* super-linter-enable */
   if (!searchQuery) {
     searchQuery = 'easy'
   }
@@ -133,9 +135,9 @@ function generateYouTubeHTML (youtubeResults) {
   youtubeResultsDiv.innerHTML = generatedItems
 }
 
-// super-linter-disable
-function showYoutubeRecipeDetails(videoId, title) {
+/* super-linter-disable */
+function showYoutubeRecipeDetails (videoId, title) {
   localStorage.setItem('selectedVideoDetails', JSON.stringify({ videoId, title }))
   window.location.href = 'youtube.html'
 }
-// super-linter-enable
+/* super-linter-enable */

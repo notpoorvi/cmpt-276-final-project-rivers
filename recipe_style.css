@@ -34,14 +34,14 @@ body {
 
 #recipe-name {
   text-align: center;
-  color: rgba(84, 64, 210, 0.8);
+  color: rgba(84, 64, 210, 100%);
   font-family: Italianno, cursive;
   font-size: 3rem;
   margin-top: 2%;
 }
 
 .main {
-  border: 10px solid rgba(84, 64, 210, 0.8);
+  border: 10px solid rgba(84, 64, 210, 100%);
   background-color: #fff6e7;
 }
 
@@ -60,14 +60,16 @@ body {
 
 main h2 {
   text-align: center;
-  background-color: rgba(217, 217, 217, 1);
+  background-color: rgba(217, 217, 217, 100%);
   padding: 3px;
   margin: 0 35vh 4vh;
   font-family: Italianno, cursive;
   font-size: 3rem;
 }
 
-.section ol, ul, p {
+.section ol, 
+ul, 
+p {
   margin: 0 35vh;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.3rem;

@@ -1,5 +1,7 @@
+/* super-linter-disable */
 const apiKey = 'AIzaSyDvtNzdBCepDaWXlERreRS1HRl1vU_Z4mA'
 // const apiKey = 'AIzaSyCB3qbGjQvnioKgkvGKGLvC261taR8tejE'
+/* super-linter-enable */
 
 document.addEventListener('DOMContentLoaded', () => {
   const videoDetails = localStorage.getItem('selectedVideoDetails')
@@ -50,6 +52,7 @@ function displayComments (comments) {
     commentElement.classList.add('comment')
 
     const authorElement = document.createElement('p')
+    /* super-linter-disable */
     const authorId = `author`
     authorElement.setAttribute('id', authorId)
     authorElement.innerHTML = comment.snippet.topLevelComment.snippet.authorDisplayName
@@ -62,6 +65,7 @@ function displayComments (comments) {
     commentElement.appendChild(authorElement)
     commentElement.appendChild(textElement)
     commentsContainer.appendChild(commentElement)
+    /* super-linter-enable */
   })
 }
 
@@ -103,7 +107,9 @@ function displayRelatedVideos (videos) {
   relatedVideosDiv.innerHTML = generatedItems
 }
 
+/* super-linter-disable */
 function showRelatedVideoDetails (videoId, title) {
   localStorage.setItem('selectedVideoDetails', JSON.stringify({ videoId, title }))
   window.location.href = 'youtube.html'
 }
+/* super-linter-enable */

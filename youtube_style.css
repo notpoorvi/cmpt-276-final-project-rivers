@@ -30,14 +30,14 @@
 
 #video-title {
   text-align: center;
-  color: rgba(84, 64, 210, 1);
+  color: rgba(84, 64, 210, 100%);
   font-family: Italianno, cursive;
   font-size: 3rem;
   margin-top: 2%;
 }
 
 .main {
-  border: 10px solid rgba(84, 64, 210, 1);
+  border: 10px solid rgba(84, 64, 210, 100%);
   background-color: #fff6e7;
 }
 
@@ -50,7 +50,7 @@
 #comments-container {
   height: 35vh;
   overflow-y: auto;
-  border: 4px solid rgba(84, 64, 210, 1);
+  border: 4px solid rgba(84, 64, 210, 100%);
   padding: 10px;
   margin: 0 35vh 2%;
 }
@@ -58,9 +58,9 @@
 .comments-heading,
 .related-videos-heading {
   text-align: center;
-  background-color: rgba(217, 217, 217, 1);
+  background-color: rgba(217, 217, 217, 100%);
   padding: 3px;
-  margin: 0 35vh 4vh 35vh;
+  margin: 0 35vh 4vh;
   font-family: Italianno, cursive;
   font-size: 3rem;
   margin-bottom: 0;
@@ -80,7 +80,7 @@
   margin: 1rem 35vh 2%;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
-  border: 4px solid rgba(84, 64, 210, 1);
+  border: 4px solid rgba(84, 64, 210, 100%);
 }
 
 .related-video {
