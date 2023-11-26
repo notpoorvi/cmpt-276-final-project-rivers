@@ -1,5 +1,5 @@
-// const apiKey = 'AIzaSyDvtNzdBCepDaWXlERreRS1HRl1vU_Z4mA'
-const apiKey = 'AIzaSyCB3qbGjQvnioKgkvGKGLvC261taR8tejE'
+const apiKey = 'AIzaSyDvtNzdBCepDaWXlERreRS1HRl1vU_Z4mA'
+// const apiKey = 'AIzaSyCB3qbGjQvnioKgkvGKGLvC261taR8tejE'
 
 document.addEventListener('DOMContentLoaded', () => {
   const videoDetails = localStorage.getItem('selectedVideoDetails')

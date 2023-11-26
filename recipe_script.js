@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function fetchRecipeDetails (recipeId) {
   // const appKey = '34959198c63d4883b456da1d12c36061'
-  const appKey = '162949a76b0647f990d6e833b4703b95'
+  // const appKey = '162949a76b0647f990d6e833b4703b95'
+  const appKey = '13b28ccdb5d34f43bf8ce054b837368a'
   const baseURL = `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${appKey}`
   try {
     const response = await fetch(baseURL)
@@ -47,8 +48,9 @@ async function fetchRecipeDetails (recipeId) {
 }
 
 async function fetchNutrition (recipeId) {
-  const appKey = '34959198c63d4883b456da1d12c36061'
+  // const appKey = '34959198c63d4883b456da1d12c36061'
   // const appKey = '162949a76b0647f990d6e833b4703b95'
+  const appKey = '13b28ccdb5d34f43bf8ce054b837368a'
   const baseURL = `https://api.spoonacular.com/recipes/${recipeId}/nutritionWidget.json?apiKey=${appKey}`
 
   try {

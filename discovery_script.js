@@ -5,8 +5,9 @@ const container = document.querySelector('.container')
 // super-linter-enable
 let searchQuery = ''
 
-const appKey = '34959198c63d4883b456da1d12c36061'
+// const appKey = '34959198c63d4883b456da1d12c36061'
 // const appKey = '162949a76b0647f990d6e833b4703b95'
+const appKey = '13b28ccdb5d34f43bf8ce054b837368a'
 
 function getQueryParam(param) {
   const urlParams = new URLSearchParams(window.location.search)
@@ -97,8 +98,8 @@ function showRecipeDetails (recipeId) {
 
 async function fetchYouTubeAPI () {
   const youtubeResultsDiv = document.getElementById('youtube-results')
-  const youtubeAPIKey = 'AIzaSyCB3qbGjQvnioKgkvGKGLvC261taR8tejE'
-  // const youtubeAPIKey = 'AIzaSyDoWT8CPztZQtjIrLpuVI_w5aAm5FdvIuE'
+  // const youtubeAPIKey = 'AIzaSyCB3qbGjQvnioKgkvGKGLvC261taR8tejE'
+  const youtubeAPIKey = 'AIzaSyDoWT8CPztZQtjIrLpuVI_w5aAm5FdvIuE'
   if (!searchQuery) {
     searchQuery = 'easy'
   }
