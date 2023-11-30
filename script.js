@@ -52,3 +52,5 @@ function scrollToSection(sectionId) {
         section.classList.remove('glow');
     }, 2000);
 }
+
+module.exports = { searchRecipe };
