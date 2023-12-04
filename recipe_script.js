@@ -42,8 +42,10 @@ async function fetchRecipeDetails(recipeId) {
         }
 
         await fetchNutrition(recipeId);
-    } catch (error) {
-        console.error('Error fetching recipe details:', error);
+    } 
+    catch (error) {
+        // console.error('Error fetching recipe details:', error);
+        return
     }
 }
 
@@ -63,6 +65,9 @@ async function fetchNutrition(recipeId) {
             nutritionInfo.textContent = 'Nutrition information not available.';
         }
     } catch (error) {
-        console.error('Error fetching nutrition info:', error);
+        // console.error('Error fetching nutrition info:', error);
+        return
     }
 }
+
+module.exports = {fetchRecipeDetails, fetchNutrition};
