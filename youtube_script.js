@@ -108,3 +108,6 @@ function showRelatedVideoDetails(videoId, title) {
     localStorage.setItem('selectedVideoDetails', JSON.stringify({ videoId, title }));
     window.location.href = 'youtube.html';
 }
+
+
+module.exports = {displayRelatedVideos,showRelatedVideoDetails, displayComments};
