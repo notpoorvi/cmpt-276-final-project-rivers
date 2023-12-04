@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('videoTitle').textContent = title;
         embedYouTubePlayer(videoId);
         fetchYouTubeComments(videoId);
-        // fetchRelatedVideos(videoId);
         fetchRelatedVideos(title);
     } else {
         console.error('No video details found.');
@@ -26,6 +25,7 @@ function embedYouTubePlayer(videoId) {
     iframe.allowFullscreen = true;
 
     playerContainer.appendChild(iframe);
+    console.log(videoId);
 }
 
 function fetchYouTubeComments(videoId) {
@@ -37,7 +37,8 @@ function fetchYouTubeComments(videoId) {
             displayComments(data.items);
         })
         .catch(error => {
-            console.error('Error fetching comments:', error);
+            // console.error('Error fetching comments:', error);
+            return
         });
 }
 
@@ -109,5 +110,11 @@ function showRelatedVideoDetails(videoId, title) {
     window.location.href = 'youtube.html';
 }
 
-
-module.exports = {displayRelatedVideos,showRelatedVideoDetails, displayComments};
+module.exports = {
+    embedYouTubePlayer,
+    fetchYouTubeComments,
+    displayComments,
+    fetchRelatedVideos,
+    displayRelatedVideos,
+    showRelatedVideoDetails
+};
