@@ -14,26 +14,22 @@ function getQueryParam(param) {
 searchForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     searchQuery = e.target.querySelector('input').value;
-    console.log(searchQuery);
-    await fetchAPI(); 
-    fetchYouTubeAPI(); 
+    await fetchAPI(searchQuery);
+    fetchYouTubeAPI(searchQuery);
 });
 
 function applyFilters() {
-    fetchAPI();
+    fetchAPI(searchQuery);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Get the recipe name from the URL parameter
     searchQuery = getQueryParam('recipe');
-    // Set the search bar value
     document.getElementById('searchRecipeInput').value = searchQuery;
-    // Fetch recipes
-    fetchAPI();
-    fetchYouTubeAPI();
+    fetchAPI(searchQuery);
+    fetchYouTubeAPI(searchQuery);
 });
 
-async function fetchAPI(){
+async function fetchAPI(searchQuery) {
     searchResultDiv.classList.add('hidden');
 
     const cuisineFilter = document.getElementById('cuisine').value;
@@ -43,41 +39,34 @@ async function fetchAPI(){
     const lowCarbFilter = document.getElementById('lowcarb').checked;
 
     let baseURL = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${APP_key}&query=${searchQuery}&number=30`;
-    
-    // Add filters to the URL
+
     if (cuisineFilter) {
         baseURL += `&cuisine=${cuisineFilter}`;
     }
-
     if (vegetarianFilter) {
         baseURL += '&diet=vegetarian';
     }
-
     if (veganFilter) {
         baseURL += '&diet=vegan';
     }
-
     if (glutenFreeFilter) {
         baseURL += '&diet=glutenFree';
     }
-
     if (lowCarbFilter) {
         baseURL += '&diet=lowCarb';
     }
-
     const response = await fetch(baseURL);
     const data = await response.json();
     generateHTML(data.results);
     searchResultDiv.classList.remove('hidden');
-    console.log(data);
+    // console.log(data);
 }
 
-
-function generateHTML(the_results){
+function generateHTML(the_results) {
     let generateditem = '';
     the_results.map(result => {
-       generateditem +=
-       `
+        generateditem +=
+        `
         <div class="item" onclick="showRecipeDetails(${result.id})">
             <img src="${result.image}" alt="">
             <div class="flex_container">
@@ -91,17 +80,16 @@ function generateHTML(the_results){
 }
 
 function showRecipeDetails(recipeId) {
-    // Store the selected recipeId in localStorage
     localStorage.setItem('selectedRecipeId', recipeId);
-    // Redirect to the recipe.html page
     window.location.href = 'recipe.html';
 }
 
-async function fetchYouTubeAPI() {
+async function fetchYouTubeAPI(searchQuery) {
     const youtubeResultsDiv = document.getElementById('youtubeResults');
 
-    const youtubeAPIKey = 'AIzaSyDoWT8CPztZQtjIrLpuVI_w5aAm5FdvIuE';
-    
+    const youtubeAPIKey = 'AIzaSyCB3qbGjQvnioKgkvGKGLvC261taR8tejE';
+    // const youtubeAPIKey = 'AIzaSyDoWT8CPztZQtjIrLpuVI_w5aAm5FdvIuE';
+
     if (!searchQuery) {
         searchQuery = 'easy';
     }
@@ -132,14 +120,6 @@ function generateYouTubeHTML(youtubeResults) {
                 </a>
             </div>
         `;
-        // generatedItems += `
-        //     <div class="youtube_item" onclick="showYoutubeRecipeDetails('${videoId}', '${title}')">
-        //         <a href="https://www.youtube.com/watch?v=${videoId}" target="_blank">
-        //             <img src="${thumbnailUrl}" alt="${title}">
-        //             <p class="youtube_title">${title}</p>
-        //         </a>
-        //     </div>
-        // `;
     });
 
     const youtubeResultsDiv = document.getElementById('youtubeResults');
@@ -147,8 +127,10 @@ function generateYouTubeHTML(youtubeResults) {
 }
 
 function showYoutubeRecipeDetails(videoId, title) {
-    // Store the selected video details in localStorage
     localStorage.setItem('selectedVideoDetails', JSON.stringify({ videoId, title }));
-    // Redirect to the youtube.html page
     window.location.href = 'youtube.html';
 }
+
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = { fetchAPI };
+  }

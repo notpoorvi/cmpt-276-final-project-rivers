@@ -1,0 +1,18 @@
+{
+  "name": "cmpt-276-final-project-rivers",
+  "version": "1.0.0",
+  "description": "Andrew La Grange, Jason Koonar, Luis Ramirez, Poorvi Bhatia",
+  "main": "discovery_script.js",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "jest-fetch-mock": "^3.0.3",
+    "jsdom": "^23.0.1"
+  },
+  "scripts": {
+    "test": "jest --testEnvironment jest-environment-jsdom"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
