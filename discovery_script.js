@@ -11,12 +11,21 @@ function getQueryParam(param) {
     return urlParams.get(param);
 }
 
-searchForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    searchQuery = e.target.querySelector('input').value;
-    await fetchAPI(searchQuery);
-    fetchYouTubeAPI(searchQuery);
-});
+// searchForm.addEventListener('submit', async (e) => {
+//     e.preventDefault();
+//     searchQuery = e.target.querySelector('input').value;
+//     await fetchAPI(searchQuery);
+//     fetchYouTubeAPI(searchQuery);
+// });
+
+if (searchForm) {
+    searchForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      searchQuery = e.target.querySelector('input').value;
+      await fetchAPI(searchQuery);
+      fetchYouTubeAPI(searchQuery);
+    });
+  }
 
 function applyFilters() {
     fetchAPI(searchQuery);
@@ -30,6 +39,14 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 async function fetchAPI(searchQuery) {
+    
+    const searchResultDiv = document.querySelector('.search_result');
+    console.log(searchResultDiv.innerHTML)
+    if (!searchResultDiv) {
+        console.error("search_result div not found");
+        return;
+    }
+    
     searchResultDiv.classList.add('hidden');
 
     const cuisineFilter = document.getElementById('cuisine').value;
@@ -132,5 +149,5 @@ function showYoutubeRecipeDetails(videoId, title) {
 }
 
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { fetchAPI };
+    module.exports = { fetchAPI, fetchYouTubeAPI };
   }
